@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dynamic Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    #quoteDisplay {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      font-style: italic;
+      min-height: 3em;
+    }
+    select, input[type="text"], button {
+      margin: 0.5rem 0.25rem 0.5rem 0;
+      padding: 0.4rem;
+      font-size: 1rem;
+    }
+    p {
+      margin: 0.25rem 0;
+    }
+    .controls {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Dynamic Quote Generator</h1>
+
+  <div class="controls">
+    <label for="categorySelect">Choose Category for Random Quote:</label><br />
+    <select id="categorySelect"></select>
+    <button id="newQuote">Show New Quote</button>
+  </div>
+
+  <div id="quoteDisplay">Quotes will appear here...</div>
+
+  <div class="controls">
+    <label for="categoryFilter">Filter Quotes by Category:</label><br />
+    <select id="categoryFilter"></select>
+  </div>
+
+  <div class="controls" id="addQuoteContainer"></div>
+
+  <div class="controls">
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+    <button onclick="exportToJsonFile()">Export Quotes</button>
+    <button id="syncBtn">Sync Quotes Now</button>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
